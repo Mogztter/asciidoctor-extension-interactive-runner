@@ -11,7 +11,7 @@ At the moment, the extension is only compatible with **JavaScript** source code,
 # Install
 
 ```bash
-npm install asciidoctor.js asciidoctor-extension-interactive-runner
+npm install @asciidoctor/core asciidoctor-extension-interactive-runner
 ```
 
 # Usage
@@ -65,14 +65,14 @@ console.log(process.version);
 ## Asciidoctor Conversion
 
 ```js
-const Asciidoctor = require('asciidoctor.js')();
+const asciidoctor = require('@asciidoctor/core')();
 const runnerExtension = require('asciidoctor-extension-interactive-runner');
+const registry = runnerExtension.register(asciidoctor.Extensions.create())
 
-Asciidoctor.Extensions.register(runnerExtension);
-
-Asciidoctor.convertFile('path/to/content.adoc', {
+asciidoctor.convertFile('path/to/content.adoc', {
   to_file: 'path/to/content.html',
   backend: 'html5',
+  extension_registry: registry
 })
 ```
 

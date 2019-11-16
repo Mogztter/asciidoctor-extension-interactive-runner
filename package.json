@@ -28,6 +28,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "asciidoctor.js": "^1.5.9"
+    "@asciidoctor/core": "^2.0.0"
   }
 }
